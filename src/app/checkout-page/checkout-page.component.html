@@ -1,0 +1,28 @@
+<div class="container mx-auto p-4">
+  <h2 class="text-xl font-bold mb-6">Checkout</h2>
+  <ul class="mb-8">
+    <li *ngFor="let item of cartItems" class="mb-4">
+      <h3 class="font-semibold">{{ item.name }}</h3>
+      <p>Price: {{ formatCurrency(item.price) }}</p>
+      <p>
+        Customizations:
+        <span *ngFor="let customization of item.customizations">
+          {{ customization }} :
+          {{ item.selectedCustomizations[customization] ? "Yes" : "No" }}
+        </span>
+      </p>
+    </li>
+  </ul>
+  <!-- Display Cart Total -->
+  <div class="text-left font-bold mb-8">Total: {{ formatCurrency(cartTotal) }}</div>
+  <!-- Checkout Form -->
+  <div>
+    <button
+      type="submit"
+      (click)="checkout()"
+      class="px-6 py-3 border border-transparent text-base font-medium rounded full shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-transform transform hover:scale-105 !important"
+    >
+      Pay Now
+    </button>
+  </div>
+</div>

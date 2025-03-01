@@ -1,0 +1,7 @@
+[ 
+    { "priceId": "price_1QlK83EsUAL5Kgd35Iaj6eCZ", "name": "Taco", "description": "Delicious beef taco", "price": 3.00, "image": "/productImages/tacos.jpg", 
+    "customizations": [ "Lettuce", "Tomato", "Cheese" ]
+}, 
+    { "priceId": "price_1QlK8PEsUAL5Kgd3JiTbml5m", "name": "Burrito", "description": "Chicken burrito with fresh ingredients", "price": 5.00, "image": "/productImages/burrito.jpg", "customizations": [ "Lettuce", "Tomato", "Cheese" ] }, 
+    {"priceId": "price_1QlK8hEsUAL5Kgd3QUezOrP3", "name": "Nachos", "description": "Crispy nachos with cheese", "price": 4.00, "image": "/productImages/nachos.jpg", "customizations": [ "Lettuce", "Tomato", "Cheese" ] }
+]

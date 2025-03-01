@@ -1,0 +1,15 @@
+<a href="/cart" class="relative inline-block">
+    <img
+      src="/cart.svg"
+      [ngClass]="{'grow-shake': growShake}"
+      alt="See your cart"
+      class="w-8 h-8 inline-block"
+    />
+
+    <span
+      class="absolute top-0 right-0 bg-red-500 text-white rounded-full px-1 text-xs"
+      style="transform: translate(50%, 150%)"
+    >
+      {{ cartCount }}
+    </span>
+  </a>

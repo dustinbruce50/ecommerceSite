@@ -1,0 +1,56 @@
+<div class="border p-2 m-4 rounded shadow-md bg-yellow-300">
+  <img
+    [src]="item.image"
+    alt="{{ item.name }}"
+    class="w-full h-48 object-contain mb-4"
+  />
+  <h3 class="text-xl font-bold">{{ item.name }}</h3>
+  <p class="text-gray-700">{{ item.description }}</p>
+  <p class="text-green-600 font-semibold">{{ formatCurrency(item.price) }}</p>
+
+  <div class="mt-4">
+    <label for="customizations" class="block text-gray-700 font-semibold"
+      >Customize:</label
+    >
+    <div class="relative">
+      <button
+        class="w-full mt-2 p-2 border rounded bg-white text-left"
+        (click)="toggleDropdown()"
+      >
+        Select Customizations
+      </button>
+      <div
+        *ngIf="showDropdown"
+        class="absolute mt-1 w-full bg-white border rounded shadow-lg z-10"
+      >
+        <ul class="max-h-64 overflow-auto">
+          <li
+            *ngFor="let customization of item.customizations"
+            class="px-4 py-2 hover:bg-gray-200"
+          >
+            <input
+              type="checkbox"
+              [id]="customization"
+              [checked]="selectedCustomizations[customization] || false"
+              (change)="toggleCustomization(customization)"
+              class="mr-2"
+            />
+
+            <label [for]="customization">{{ customization }}</label>
+          </li>
+        </ul>
+      </div>
+      <button
+        class="mt-4 bg-green-500 text-white px-4 py-2 rounded"
+        (click)="addToCart()"
+      >
+        Add To Cart
+      </button>
+      <!--
+            <select id="customizations" class="w-full mt-2 p-2 border rounded" (change)="onCustomizationChange($event)">
+                <option *ngFor="let customization of customizations" [value]="customization">{{customization}}</option>
+            </select>
+            -->
+    </div>
+  </div>
+</div>

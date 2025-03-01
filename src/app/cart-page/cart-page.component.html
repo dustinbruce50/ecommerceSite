@@ -1,0 +1,29 @@
+<div class="container mx-auto p-4">
+  <ul>
+    <li *ngFor="let item of cartItems" class="mb-4">
+      <h3 class="font-semibold">{{ item.name }}</h3>
+      <img class="max-h-20 max-w-20" src="{{ item.image }}" alt="" />
+      <p>{{ formatCurrency(item.price) }}</p>
+      <p>
+        Customizations:
+        <span *ngFor="let customization of item.customizations">
+          {{ customization }} :
+          {{ item.selectedCustomizations[customization] ? "Yes" : "No" }}
+        </span>
+      </p>
+      <button
+        class="mt-2 bg-red-600 rounded hover:bg-red-700 text-white px-4 py-2"
+        (click)="removeFromCart(item)"
+      >
+        Remove from cart
+      </button>
+    </li>
+  </ul>
+  <div class="mt-4 text-right font-bold">Total: {{ cartTotal }}</div>
+  <button
+    href=""
+    class="px-6 py-3 border border-transparent text-base font-medium rounded full shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-transform transform hover:scale-105 !important"
+  >
+    <a href="/checkout">Checkout</a>
+  </button>
+</div>
